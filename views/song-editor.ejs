@@ -1,0 +1,43 @@
+<%- include('./partials/head.ejs') %>
+
+</head>
+<%- include('./partials/header.ejs') %>
+<main>
+
+    <h1> Now editing <%= song.title %></h1>
+
+    <div class="songDetails">
+        <p>This is going to be editable!</p>
+
+    </div>
+
+
+    <div class="formcontainer">
+        <form class="song-form" action="/music/updatesong" method="POST">
+            <label for="Title">Song Title:</label>
+            <input type="text" name="title" id="title" value="<%= song.title %>">
+            <br>
+            <label for="Artist">Artist/Group:</label>
+            <input type="text" name="artist" id="artist" value="<%= song.artist %>">
+            <br>
+
+            <label for="lyrics">Lyrics:</label> <br>
+            <textarea name="lyrics" rows="40" cols="80" id="lyrics"
+                value="<%= song.lyrics %>"><%= song.lyrics %> </textarea>
+            <input type="hidden" value="<%= song._id %>" name="songId">
+            <button class="btn" type="submit">Update Song →</button>
+        </form>
+    </div>
+
+
+    <form action="/music/updatesong" method="POST">
+        <input type="hidden" value="<%= song._id %>" name="songId">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <button class="btn" type="submit">Update</button>
+    </form>
+
+
+
+</main>
+
+<%- include('./partials/footer.ejs') %>

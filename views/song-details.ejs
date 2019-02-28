@@ -1,0 +1,32 @@
+<%- include('./partials/head.ejs') %>
+
+</head>
+<%- include('./partials/header.ejs') %>
+<main>
+
+
+
+    <h1> this is <%= `${pageTitle}` %></h1>
+
+
+
+
+    <div class="songDetails">
+
+        <h1><%= song.title %></h1>
+        <hr>
+
+        <h2><%= song.artist %></h2>
+        <p><%= song.lyrics %></p>
+        <p><%= song.slug %></p>
+        <div class="fakebutton">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <a href="/music/songs/<%= song._id %>/edit" class="btn">Edit this song</a>
+        </div>
+    </div>
+
+
+
+</main>
+
+<%- include('./partials/footer.ejs') %>

@@ -1,0 +1,9 @@
+mine are partials his are includes
+
+
+Mimic the nav visibility of the home page in the other nav bar.
+check add song has all fields in form.
+do full crud actions. 
+more all includes to partials.
+rename nav css 
+individual song css

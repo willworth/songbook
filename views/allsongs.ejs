@@ -1,0 +1,54 @@
+<%- include('./partials/head.ejs') %>
+
+</head>
+<%- include('./partials/header.ejs') %>
+<main>
+
+
+    <h1> this is <%= `${pageTitle}` %></h1>
+
+
+
+
+
+
+
+    <% if (songs.length > 0) { %>
+    <p>Here are the songs currently saved in the database:</p>
+    <div>
+        <% for (let song of songs) { %>
+        <article class=songcard>
+
+            <h1>
+                <%= song.title %>
+            </h1>
+
+
+            <h2>
+                <%= song.artist %>
+            </h2>
+            <div>
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <a href="/music/songs/<%= song._id %>" class="btn">Details</a>
+                <a href="/music/songs/<%= song._id %>/edit" class="btn">Edit This Song</a>
+                <form action="/music/delete-song" method="POST">
+                    <input type="hidden" value="<%= song._id %>" name="songId">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <button class="btn" type="submit">Delete</button>
+                </form>
+
+
+            </div>
+
+
+
+        </article>
+        <% } %>
+    </div>
+    <% } else { %>
+    <h1>No songs Found!</h1>
+    <% } %>
+
+</main>
+
+<%- include('./partials/footer.ejs') %>

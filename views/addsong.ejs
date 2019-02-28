@@ -1,0 +1,33 @@
+<%- include('./partials/head.ejs') %>
+
+</head>
+<%- include('./partials/header.ejs') %>
+<main>
+
+
+    <h1> this is <%= `${pageTitle}` %></h1>
+
+
+
+
+
+    <div>
+        <form class="song-form" action="/music/addsong" method="POST">
+            <label for="Title">Song Title:</label>
+            <input type="text" name="title" id="title">
+            <br>
+            <label for="Artist">Artist/Group:</label>
+            <input type="text" name="artist" id="artist">
+            <br>
+            <label for="lyrics">Lyrics:</label> <br>
+            <textarea name="lyrics" rows="4" cols="45" maxlength="5000"
+                placeholder="Enter the lyrics and chords here"></textarea>
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+            <button class="btn" type="submit">Save Song →</button>
+        </form>
+    </div>
+
+</main>
+
+<%- include('./partials/footer.ejs') %>
