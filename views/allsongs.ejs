@@ -4,26 +4,17 @@
 <%- include('./partials/header.ejs') %>
 <main>
 
-
     <h1> this is <%= `${pageTitle}` %></h1>
 
 
-
-
-
-
-
     <% if (songs.length > 0) { %>
-    <p>Here are the songs currently saved in the database:</p>
+    <p>Here are all the songs you've saved in songbook:</p>
     <div>
         <% for (let song of songs) { %>
         <article class=songcard>
-
             <h1>
                 <%= song.title %>
             </h1>
-
-
             <h2>
                 <%= song.artist %>
             </h2>
@@ -36,12 +27,7 @@
                     <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                     <button class="btn" type="submit">Delete</button>
                 </form>
-
-
             </div>
-
-
-
         </article>
         <% } %>
     </div>

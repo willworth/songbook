@@ -26,7 +26,8 @@ exports.createSong = async (req, res) => {
 
 //  #TODO rewrite as async await with 
 exports.getSongs = (req, res, next) => {
-  Song.find()   //find is mongoose
+  // Song.find()   //find is mongoose
+  Song.find({ author : req.user._id })   //find is mongoose
     .then(songs => {
       // console.log(songs);
       res.render('allsongs', {
