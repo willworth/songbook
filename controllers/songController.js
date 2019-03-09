@@ -16,7 +16,7 @@ exports.createSong = async (req, res) => {
   console.log(`Adding song to database ${song.title, song.artist}`)
   await song.save();   // means we won't go to line after this until save has happened 
   req.flash(`success`, `Successfully created ${song.title}`)      //success warning error
-  res.redirect('/');
+  res.redirect('/music/allsongs');
   }catch (err) {
       console.log(err)
     }

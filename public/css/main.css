@@ -30,6 +30,7 @@ main {
     text-align: center;
     background-color: black;
     color: darkgray;
+    max-width: 80vw;
   }
 
   /* https://unsplash.com/photos/M6zEthGb1W4 */
@@ -63,6 +64,8 @@ main {
     margin: 5px;
     position: relative;
     right:30px;
+    bottom: 5px;
+    padding: 5px;
   }
 
 

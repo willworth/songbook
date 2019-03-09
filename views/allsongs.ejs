@@ -4,14 +4,14 @@
 <%- include('./partials/header.ejs') %>
 <main>
 
-    <h1> this is <%= `${pageTitle}` %></h1>
+    <h1><%= `${pageTitle}` %></h1>
 
 
     <% if (songs.length > 0) { %>
     <p>Here are all the songs you've saved in songbook:</p>
     <div>
         <% for (let song of songs) { %>
-        <article class=songcard>
+        <article class="songcard">
             <h1>
                 <%= song.title %>
             </h1>
@@ -19,12 +19,11 @@
                 <%= song.artist %>
             </h2>
             <div>
-                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                <a href="/music/songs/<%= song._id %>" class="btn">Details</a>
-                <a href="/music/songs/<%= song._id %>/edit" class="btn">Edit This Song</a>
                 <form action="/music/delete-song" method="POST">
-                    <input type="hidden" value="<%= song._id %>" name="songId">
+                    <a href="/music/songs/<%= song._id %>" class="btn">Details</a>
+                    <a href="/music/songs/<%= song._id %>/edit" class="btn">Edit This Song</a>
                     <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <input type="hidden" value="<%= song._id %>" name="songId">
                     <button class="btn" type="submit">Delete</button>
                 </form>
             </div>
@@ -32,7 +31,9 @@
         <% } %>
     </div>
     <% } else { %>
-    <h1>No songs Found!</h1>
+    <h4>No songs Found!</h4>
+    <p>It looks as if you haven't added any songs, yet.
+        Why not <a href="/music/addsong">add one now</a>?</p>
     <% } %>
 
 </main>
