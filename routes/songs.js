@@ -7,6 +7,7 @@ const isAuth = require('../middleware/is-auth');
 
 router.get('/test', songController.test);
 
+router.get('/dashboard', isAuth, songController.dashboard);
 
 //////////////////
 

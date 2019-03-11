@@ -2,6 +2,13 @@ const mongoose = require('mongoose');
 const Song = require('../models/song');
 
 
+exports.dashboard  = (req, res, next) =>{
+res.render('dashboard', {
+  pageTitle: 'Dashboard',
+  path: '/music/dashboard',
+});
+};
+
 exports.test = (req, res) => {
     console.log(req.body);
       res.render('test')};

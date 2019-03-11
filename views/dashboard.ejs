@@ -1,0 +1,25 @@
+<%- include('./partials/head.ejs') %>
+
+</head>
+<%- include('./partials/header.ejs') %>
+<div class="bodywrapper">
+    <main>
+        <h1>This is the Songbook dashboard</h1>
+        <p> You can <a href="/music/addsong">add a song</a>, or
+            view <a href="/music/allsongs">all songs</a> (if you have any!)
+        </p>
+        <p>
+
+            <form action="/logout" method="post">
+                <button type="submit">log out</button>
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            </form>
+
+
+        </p>
+        <img class="homepageMuso" src="/img/musician.jpg" alt="musician">
+    </main>
+
+</div>
+
+<%- include('./partials/footer.ejs') %></div>

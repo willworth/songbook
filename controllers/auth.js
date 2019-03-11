@@ -100,7 +100,7 @@ exports.postLogin = (req, res, next) => {
             req.session.user = user;
             return req.session.save(err => {
               console.log(err);
-              res.redirect('/');
+              res.redirect('/music/dashboard');
             });
           }
           return res.status(422).render('auth/login', {
