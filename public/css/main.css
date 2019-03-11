@@ -23,6 +23,10 @@ main {
     /* position: relative; */
     text-align: center;
     max-width: 80vw;
+    min-height: 90vh;
+    margin: 0 auto;
+    background-color: teal;
+    border-radius: 10px 10px 2px 2px;
   }
   
   .songDetails{

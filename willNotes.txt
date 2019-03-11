@@ -1,6 +1,8 @@
-mine are partials his are includes
 
 
-more all includes to partials.
+currently has pw reset form
+sign up form not aligned
+
+
 rename nav css 
 individual song css
